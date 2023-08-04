@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}register{%endblock%}
+{% block atc4 %}active{%endblock%}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <div class="col" style="margin: 50px;">
+    </div>
+  </div>
+    <form method="post">
+      <div class="row mb-3">
+        <div class="col">
+          <label class="col-sm-4 col-form-label offset-4">Username</label>
+          <div class="col-sm-4 offset-4 w-25">
+            <input type="text" class="form-control form-control-lg">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label class="col-sm-4 col-form-label offset-4">Name</label>
+          <div class="col-sm-4 offset-4 w-25">
+            <input type="text" class="form-control form-control-lg">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label class="col-sm-4 col-form-label offset-4">Surname</label>
+          <div class="col-sm-4 offset-4 w-25">
+            <input type="text" class="form-control form-control-lg">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label class="col-sm-4 col-form-label offset-4">Password</label>
+          <div class="col-sm-4 offset-4 w-25">
+            <input type="password" class="form-control form-control-lg">
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3">
+        <div class="col">
+          <label class="col-sm-4 col-form-label offset-4">Password confirmation</label>
+          <div class="col-sm-4 offset-4 w-25">
+            <input type="password" class="form-control form-control-lg">
+            <div class="form-label bg-danger" style="margin: 10px 0px;">Error</div>
+          </div>
+        </div>
+      </div>
+      <div class="row mb-3 offset-sm-5">
+        <div class="col">
+          <button type="submit" class="btn btn-outline-success">Принять</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{%endblock%}

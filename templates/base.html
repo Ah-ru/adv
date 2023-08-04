@@ -1,0 +1,64 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href=" 'img/favicon.ico " type="image/x-icon">
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/fontello.css' %}">
+  <title>{% block title %}Base{% endblock %}</title>
+</head>
+
+<body>
+  <ul class="nav nav-tabs sticky-top bg-black nav-fill">
+    <li class="nav-item ">
+      <a class="nav-link {% block atc1 %}{% endblock %} text-success" aria-current="page" href="{% url 'home'%}">
+        <span style="font-weight: bold;">Главная</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% block atc2 %}{% endblock %} text-success" href="{% url 'sel' %}"><span style="font-weight: bold;">Топ продавцов</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% block atc3 %}{% endblock %} text-success" href="{% url 'advp' %}">
+        <span style="font-weight: bold;">Разместить объявление</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% block atc4 %}{% endblock %} text-success" href="{% url 'reg' %}">
+        <span style="font-weight: bold;">Регистрация</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% block atc5 %}{% endblock %} text-success" href="{% url 'log' %}">
+        <span style="font-weight: bold;">Войти</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link {% block atc6 %}{% endblock %} text-success" href="{% url 'prof' %}">
+        <span style="font-weight: bold;">Профиль</span>
+      </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link text-success" href="#">
+        <span style="font-weight: bold;">Выйти</span>
+      </a>
+    </li>
+    <li>
+    <form class="d-flex my-2 my-lg-0">
+    <input class="form-control me-sm-2" type="text" placeholder="Search">
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  </li>
+  </ul>
+{% block content %}
+{% endblock %}
+<script src="{% static 'js/bootstrap.bundle.min.js' %}  "></script>
+</body>
+
+</html>

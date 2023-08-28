@@ -123,11 +123,13 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'ru'
 
+USE_TZ = True
+
 TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
-USE_TZ = True
+
 
 DATETIME_FORMAT = '%Y-%m-%d %H:%M:%S'
 

@@ -8,23 +8,25 @@ class Adv(models.Model):
     title = models.CharField(verbose_name= 'name', max_length = 80)#verbose_name = представление в админке 
     description = models.TextField()
     price = models.DecimalField(max_digits = 12, decimal_places = 2)
-    created_at = models.DateTimeField(auto_now_add = True)
+    created_at = models.DateTimeField(auto_now_add = True, )
     updated_at = models.DateTimeField(auto_now = True)
     auction = models.BooleanField(help_text = "Select - auction or not")
 
     @admin.display(description = 'Created at')
     def chd(self): 
+        l_time = timezone.localtime(self.created_at)
         if self.created_at.date() == timezone.now().date():
-            c_time = self.created_at.time().strftime('%H:%M')
+            c_time = l_time.time().strftime('%H:%M')
             return format_html("<span style='color:green'> today at {} </span>", c_time) #green span 
-        return self.created_at
+        return l_time
     
     @admin.display(description = 'Updated at')
     def chu(self):
+        l_time = timezone.localtime(self.updated_at)
         if self.updated_at.date() == timezone.now().date():
-            c_time = self.updated_at.time().strftime('%H:%M')
+            c_time = l_time.time().strftime('%H:%M')
             return format_html("<span style='color:red'> today at {} </span>", c_time)#red span
-        return self.updated_at
+        return l_time
         
     class Meta:
         db_table = "advertisements"
